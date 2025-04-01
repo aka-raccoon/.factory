@@ -8,7 +8,7 @@ let
   monitor = {
     office = {
       name = "dell";
-      gap = 500;
+      gap = 700;
     };
   };
   ws_terminal = "T";
