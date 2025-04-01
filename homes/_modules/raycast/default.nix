@@ -17,11 +17,11 @@ in
   config = lib.mkIf cfg.enable {
     home.packages = with pkgs; [ raycast ];
 
-    xdg.configFile."${scripts}/rebuild-nixos.sh" = {
+    xdg.configFile."${scripts}/build-dots.sh" = {
       text = ''
         #!/bin/bash
         # @raycast.schemaVersion 1
-        # @raycast.title Rebuild NixOS
+        # @raycast.title Build dots ◉◉◉◉
         # @raycast.mode compact
         # @raycast.packageName Raycast Scripts
         # @raycast.icon 💾
@@ -30,7 +30,7 @@ in
         # Documentation:
         # @raycast.description Run NixOS rebuild command
 
-        /run/current-system/sw/bin/darwin-rebuild switch --flake "git+ssh://git@github.com/aka-raccoon/spaceship-factory/#${hostname}"
+        /run/current-system/sw/bin/darwin-rebuild switch --flake "git+ssh://git@github.com/aka-raccoon/.factory/#${hostname}"
       '';
       executable = true;
     };
